@@ -1,13 +1,28 @@
 ---
-title: "About"
-image: profile.jpg
+title: "Aditya Santosh Rao"
 about:
-  template: jolla
+  template: solana
   links:
     - icon: github
       text: Github
       href: https://github.com/etc5523-2022
-
+    - icon: twitter
+      text: Twitter(X)
+      href: https://x.com/TheRock?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/adityaraos/
 ---
 
-This is a blog template for the ETC5523 Communicating with Data assessment at Monash University.
+<div style="float: right; width: 255px; text-align: center; margin-left: 18px;">
+  <img src="images/propic.jpeg" alt="Image of Author" style="width: 100%; 
+  border: 2px solid #343A40;">
+  <div style="text-align: center; font-size: 16px;">
+  </div>
+</div>
+
+Hi, I'm Aditya Rao, a master's student at Monash University pursuing a degree in Business Analytics. After gaining experience in marketing, I decided to switch streams, as I found the field of analytics to be a promising option for my career. 
+
+I am passionate about leveraging data to drive insights, and I aim to work in marketing analytics or consulting in the future. My technical skills include proficiency in R, Python, and Java, which I use to analyze and solve complex business problems. 
+
+I am also a part-time badminton coach and enjoy playing badminton in my free time. I am a voracious reader and often find myself reading absurdist philosophies as a genre of choice. Some of my other hobbies include photography, travel and gaming. 

@@ -8,17 +8,5 @@ listing:
   sort-ui: false
   filter-ui: false
 page-layout: full
-date: "2024-10-03"
-author: "Aditya Santosh Rao"
 title-block-banner: true
 ---
-
-```{css}
-#| echo: false
-
-body, html {
-  height: 100%;
-  margin: 0;
-}
-```
-
