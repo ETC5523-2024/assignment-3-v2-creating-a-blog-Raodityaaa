@@ -1,58 +1,129 @@
 ---
 title: "Bob Ross's Joy of Painting Analysis"
+description: |
+  This analysis examines color usage in Bob Ross's The Joy of Painting, highlighting his aesthetic choices and frequent use of a limited, serene color palette.
 author: "Aditya Rao"
 date: "sys.date"
 categories: [blog]
+format:
+  html:
+    toc: true
+    toc_float: true
+    fig-align: center
+    number-sections: false
+    fig-cap-location: top
+    theme: solar
 ---
+```{r setup}
+#| include: false
 
-# Introduction
+knitr::opts_chunk$set(echo = FALSE,
+                      eval = TRUE,
+                      message = FALSE,
+                      warning = FALSE,
+                      error = FALSE)
+```
 
-Bob Ross, the iconic host of *The Joy of Painting*, captivated audiences with his ability to create serene landscapes in under 30 minutes. One defining element of his art is the limited yet effective color palette he used. This post explores the colors most and least frequently used in his paintings, uncovering the artistic preferences that contributed to his distinctive style.
-
-# Data and Methodology
-
-The dataset used for this analysis is derived from the popular TidyTuesday project, specifically from the 2023-02-21 release, which focuses on Bob Ross's paintings. The dataset includes detailed information about each painting featured in Bob Ross’s television series, The Joy of Painting.
-
-```{r}
-# Load libraries and data (assuming the data was loaded previously)
+```{r loading-libraries}
 library(tidyverse)
+library(tidytuesdayR)
+library(dplyr)
+library(readr)
+library(ggdark)
+library(tidyr)
 library(ggplot2)
-
-# Example data plotting (adjust with actual dataset)
-color_data <- data.frame(
-  color = c("Green", "Blue", "Brown", "White", "Black", "Yellow"),
-  frequency = c(30, 25, 20, 15, 10, 5)
-)
-
-ggplot(color_data, aes(x=reorder(color, -frequency), y=frequency, fill=color)) +
-  geom_bar(stat="identity") +
-  labs(title="Frequency of Colors Used in Bob Ross's Paintings", x="Color", y="Frequency") +
-  theme_minimal()
+library(reshape2)
+library(here)
+library(kableExtra)
 ```
 
-# Key Findings
+```{r data}
+# Read the CSV file
+bob_ross <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-02-21/bob_ross.csv')
+```
+```{r}
+#| echo: false
+# Remove the first column
+bob_ross <- select(bob_ross, -1)
 
-1. **Most Frequently Used Colors**:  
-   Ross regularly utilized a specific set of colors that brought consistency and harmony to his paintings. These colors contributed to the tranquil and attractive landscapes that are a hallmark of his work.
+# Convert relevant columns to logical
+bob_ross <- bob_ross |> 
+  mutate(
+    across(Black_Gesso:Alizarin_Crimson, as.logical)
+  )
+dir.create(here("data", "2023", "2023-02-21"), recursive = TRUE, showWarnings = FALSE)
 
-2. **Least Frequently Used Colors**:  
-   The analysis also revealed a set of colors that were seldom used. These colors may have been reserved for particular types of scenes or unique visual effects.
+# Save the data
+write_csv(
+  bob_ross,
+  here("data", "2023", "2023-02-21", "bob_ross.csv")
+)
+```
+
+```{r data cleaning}
+#| echo: false
+# Summarize the color usage data
+color_usage <- bob_ross %>%
+  select(Black_Gesso:Alizarin_Crimson) %>%
+  summarise(across(everything(), ~ sum(. == TRUE, na.rm = TRUE)))
+
+# Convert to long format
+color_usage_long <- tidyr::pivot_longer(color_usage, cols = everything(), names_to = "Color", values_to = "Count")
+```
+
+## Problem Description
+
+Bob Ross, the iconic host of The Joy of Painting, is renowned for his ability to paint tranquil and attractive landscapes in under 30 minutes. This paper examines the colors used in his paintings to determine color usage trends, with a special emphasis on the most and least often used colors. By evaluating these elements, we obtain insight into Ross' artistic tastes and the color palettes that constitute his distinct style.
+
+The goal of this analysis is to investigate the color palette used by Bob Ross in his television series *The Joy of Painting*. By examining the frequency and combination of colors used, we aim to uncover insights into his artistic style, which helped define the serene and picturesque landscapes he painted.
+
+## Dataset Overview
 
 ```{r}
-# Example pie chart of color distribution
-color_data_pie <- data.frame(
-  color = c("Frequent Colors", "Rare Colors"),
-  proportion = c(85, 15)
+data_description <- data.frame(
+  Feature = c("Title", 
+              "Season and Episode", 
+              "Image Source", 
+              "Color Information", 
+              "Usage Frequency"),
+  Description = c("The name of each painting.",
+                  "The season and episode number in which the painting was featured.",
+                  "Links to the images of the paintings.",
+                  "Binary indicators for the presence (True/False) of 22 specific colors across the paintings, including Titanium White, Alizarin Crimson, Van Dyke Brown, etc.",
+                  "Reflects the color palettes Bob Ross employed, offering insights into his artistic choices and recurring themes.")
 )
 
-ggplot(color_data_pie, aes(x="", y=proportion, fill=color)) +
-  geom_bar(stat="identity", width=1) +
-  coord_polar("y") +
-  labs(title="Proportion of Frequent vs. Rare Colors in Bob Ross's Paintings") +
-  theme_void()
+# Generate the customized table for a dark theme
+kable(data_description, caption = "Key Features of the Dataset") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), 
+                full_width = F, 
+                position = "center") %>%
+  row_spec(0, background = "#333333", color = "#FFFFFF", bold = TRUE) %>%  # Header row dark background
+  row_spec(1:nrow(data_description), background = "#444444", color = "#FFFFFF") %>%  # Data rows
+  column_spec(1, bold = TRUE)  # Bold the first column
 ```
 
-# Conclusion
 
-The analysis of Bob Ross's color palette provides a window into the artistic decisions that made his work so distinctive. By regularly applying a limited yet effective set of colors, Ross was able to create the calming and picturesque landscapes that are beloved by fans.
-![](thumbnail.jpg)
+```{r plot 1}
+#| echo: false
+# Separate the most and least used colors
+most_used_colors <- color_usage_long %>% arrange(desc(Count)) %>% head(5)
+least_used_colors <- color_usage_long %>% arrange(Count) %>% head(5)
+
+# Plot the most used colors
+plot1 <- ggplot(most_used_colors, aes(x = reorder(Color, Count), y = Count)) +
+  geom_col(fill = "cyan4") +
+  coord_flip() +
+  labs(title = "Most Used Colors in Bob Ross Paintings",
+       x = "Color",
+       y = "Usage Count") 
+plot1 + dark_theme_bw()
+```
+
+
+
+
+
+
+
+
