@@ -3,7 +3,7 @@ title: "Bob Ross's Joy of Painting Analysis"
 description: |
   This analysis examines color usage in Bob Ross's The Joy of Painting, highlighting his aesthetic choices and frequent use of a limited, serene color palette.
 author: "Aditya Rao"
-date: "24-10-06"
+date: "10-06-2024"
 categories: [blog]
 format:
   html:
@@ -71,6 +71,15 @@ color_usage <- bob_ross %>%
 # Convert to long format
 color_usage_long <- tidyr::pivot_longer(color_usage, cols = everything(), names_to = "Color", values_to = "Count")
 ```
+
+```{r}
+#| fig-align: center
+#| out-width: 80%
+
+knitr::include_graphics("../../images/bobross.jpeg")
+
+```
+
 
 ## Problem Description
 
@@ -154,6 +163,7 @@ plot3 + dark_theme_grey()
 - The heatmap @fig-fig2 highlights common color pairings in Bob Ross's paintings, with darker shades representing higher co-occurrence. It reveals his consistent use of base colors like Titanium White and frequent pairings of natural tones, reflecting his signature landscape style.
 
 ## Conclusion
+
 The research of color usage in Bob Ross's paintings reveals a strong preference for specific colors, the most commonly used being Titanium White and Alizarin Crimson. These findings are congruent with Ross's technique, which seeks to produce vivid but relaxing nature images. The least used hues, while less noticeable, helped to create unique features in individual artworks. This analysis of color utilization sheds light on the artistic decisions that shaped Bob Ross' renowned landscapes.
 
 ## References:
@@ -167,6 +177,3 @@ The research of color usage in Bob Ross's paintings reveals a strong preference 
 -   Bob Ross. (2015, November 2). *Bob Ross: The joy of painting - Wintertime blues (Season 20 Episode 10)* \[Video\]. YouTube. <https://www.youtube.com/watch?v=sD993H5FBIY>
 
 -   Wikipedia contributors. (2024, August 26). *Bob Ross*. In Wikipedia, The Free Encyclopedia. Retrieved from <https://en.wikipedia.org/wiki/Bob_Ross>
-
-
-

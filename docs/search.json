@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "posts/welcome/whateveryouwant.html",
-    "href": "posts/welcome/whateveryouwant.html",
-    "title": "Bob Ross’s Joy of Painting Analysis",
-    "section": "",
-    "text": "Bob Ross, the iconic host of The Joy of Painting, is renowned for his ability to paint tranquil and attractive landscapes in under 30 minutes. This paper examines the colors used in his paintings to determine color usage trends, with a special emphasis on the most and least often used colors. By evaluating these elements, we obtain insight into Ross’ artistic tastes and the color palettes that constitute his distinct style.\nThe goal of this analysis is to investigate the color palette used by Bob Ross in his television series The Joy of Painting. By examining the frequency and combination of colors used, we aim to uncover insights into his artistic style, which helped define the serene and picturesque landscapes he painted."
-  },
-  {
     "objectID": "posts/welcome/whateveryouwant.html#problem-description",
     "href": "posts/welcome/whateveryouwant.html#problem-description",
     "title": "Bob Ross’s Joy of Painting Analysis",
-    "section": "",
-    "text": "Bob Ross, the iconic host of The Joy of Painting, is renowned for his ability to paint tranquil and attractive landscapes in under 30 minutes. This paper examines the colors used in his paintings to determine color usage trends, with a special emphasis on the most and least often used colors. By evaluating these elements, we obtain insight into Ross’ artistic tastes and the color palettes that constitute his distinct style.\nThe goal of this analysis is to investigate the color palette used by Bob Ross in his television series The Joy of Painting. By examining the frequency and combination of colors used, we aim to uncover insights into his artistic style, which helped define the serene and picturesque landscapes he painted."
+    "section": "Problem Description",
+    "text": "Problem Description\nBob Ross, the iconic host of The Joy of Painting, is renowned for his ability to paint tranquil and attractive landscapes in under 30 minutes. This paper examines the colors used in his paintings to determine color usage trends, with a special emphasis on the most and least often used colors. By evaluating these elements, we obtain insight into Ross’ artistic tastes and the color palettes that constitute his distinct style.\nThe goal of this analysis is to investigate the color palette used by Bob Ross in his television series The Joy of Painting. By examining the frequency and combination of colors used, we aim to uncover insights into his artistic style, which helped define the serene and picturesque landscapes he painted."
   },
   {
     "objectID": "posts/welcome/whateveryouwant.html#dataset-overview",
@@ -46,7 +39,7 @@
     "href": "blog.html",
     "title": "ETC5523 Blog Assessment",
     "section": "",
-    "text": "Bob Ross’s Joy of Painting Analysis\n\n\n\n\n\n\nblog\n\n\n\nThis analysis examines color usage in Bob Ross’s The Joy of Painting, highlighting his aesthetic choices and frequent use of a limited, serene color palette. \n\n\n\n\n\nDec 10, 2007\n\n\nAditya Rao\n\n\n\n\n\n\nNo matching items"
+    "text": "Bob Ross’s Joy of Painting Analysis\n\n\n\n\n\n\nblog\n\n\n\nThis analysis examines color usage in Bob Ross’s The Joy of Painting, highlighting his aesthetic choices and frequent use of a limited, serene color palette. \n\n\n\n\n\nOct 6, 2024\n\n\nAditya Rao\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -60,6 +53,6 @@
     "href": "index.html",
     "title": "ETC5523 Blog Assessment",
     "section": "",
-    "text": "Bob Ross’s Joy of Painting Analysis\n\n\n\n\n\n\nblog\n\n\n\nThis analysis examines color usage in Bob Ross’s The Joy of Painting, highlighting his aesthetic choices and frequent use of a limited, serene color palette. \n\n\n\n\n\nDec 10, 2007\n\n\nAditya Rao\n\n\n\n\n\n\nNo matching items"
+    "text": "Bob Ross’s Joy of Painting Analysis\n\n\n\n\n\n\nblog\n\n\n\nThis analysis examines color usage in Bob Ross’s The Joy of Painting, highlighting his aesthetic choices and frequent use of a limited, serene color palette. \n\n\n\n\n\nOct 6, 2024\n\n\nAditya Rao\n\n\n\n\n\n\nNo matching items"
   }
 ]
