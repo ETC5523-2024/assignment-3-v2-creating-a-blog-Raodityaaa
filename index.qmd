@@ -13,12 +13,3 @@ author: "Aditya Santosh Rao"
 title-block-banner: true
 ---
 
-```{css}
-#| echo: false
-
-body, html {
-  height: 100%;
-  margin: 0;
-}
-```
-

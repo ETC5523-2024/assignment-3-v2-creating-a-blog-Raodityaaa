@@ -7,6 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Aditya Rao">
+<meta name="dcterms.date" content="2007-12-10">
+<meta name="description" content="This analysis examines color usage in Bob Ross’s The Joy of Painting, highlighting his aesthetic choices and frequent use of a limited, serene color palette.">
 
 <title>ADI LIKES TO ANALYSE - Bob Ross’s Joy of Painting Analysis</title>
 <style>
@@ -20,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -101,12 +69,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -159,8 +131,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Bob Ross’s Joy of Painting Analysis</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">news</div>
+                  <div>
+        <div class="description">
+          <p>This analysis examines color usage in Bob Ross’s The Joy of Painting, highlighting his aesthetic choices and frequent use of a limited, serene color palette.</p>
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">blog</div>
               </div>
                   </div>
   </div>
@@ -178,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Invalid Date</p>
+        <p class="date">December 10, 2007</p>
       </div>
     </div>
     
@@ -189,7 +166,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#problem-description" id="toc-problem-description" class="nav-link active" data-scroll-target="#problem-description">Problem Description</a></li>
+  <li><a href="#dataset-overview" id="toc-dataset-overview" class="nav-link" data-scroll-target="#dataset-overview">Dataset Overview</a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References:</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -197,81 +186,111 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>Bob Ross, the iconic host of <em>The Joy of Painting</em>, captivated audiences with his ability to create serene landscapes in under 30 minutes. One defining element of his art is the limited yet effective color palette he used. This post explores the colors most and least frequently used in his paintings, uncovering the artistic preferences that contributed to his distinctive style.</p>
+<section id="problem-description" class="level2">
+<h2 class="anchored" data-anchor-id="problem-description">Problem Description</h2>
+<p>Bob Ross, the iconic host of The Joy of Painting, is renowned for his ability to paint tranquil and attractive landscapes in under 30 minutes. This paper examines the colors used in his paintings to determine color usage trends, with a special emphasis on the most and least often used colors. By evaluating these elements, we obtain insight into Ross’ artistic tastes and the color palettes that constitute his distinct style.</p>
+<p>The goal of this analysis is to investigate the color palette used by Bob Ross in his television series <em>The Joy of Painting</em>. By examining the frequency and combination of colors used, we aim to uncover insights into his artistic style, which helped define the serene and picturesque landscapes he painted.</p>
 </section>
-<section id="data-and-methodology" class="level1">
-<h1>Data and Methodology</h1>
-<p>Using a dataset containing binary indicators for colors present in Bob Ross’s paintings, we examined the frequency of colors across multiple episodes. The dataset provides insights into the aesthetic choices Ross made, highlighting which colors were staples in his artistic repertoire.</p>
+<section id="dataset-overview" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-overview">Dataset Overview</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries and data (assuming the data was loaded previously)</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example data plotting (adjust with actual dataset)</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>color_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"Green"</span>, <span class="st">"Blue"</span>, <span class="st">"Brown"</span>, <span class="st">"White"</span>, <span class="st">"Black"</span>, <span class="st">"Yellow"</span>),</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">frequency =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">25</span>, <span class="dv">20</span>, <span class="dv">15</span>, <span class="dv">10</span>, <span class="dv">5</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(color_data, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(color, <span class="sc">-</span>frequency), <span class="at">y=</span>frequency, <span class="at">fill=</span>color)) <span class="sc">+</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>) <span class="sc">+</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Frequency of Colors Used in Bob Ross's Paintings"</span>, <span class="at">x=</span><span class="st">"Color"</span>, <span class="at">y=</span><span class="st">"Frequency"</span>) <span class="sc">+</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-chart1" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-chart1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Key Features of the Dataset
+</figcaption>
+<div aria-describedby="tbl-chart1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<table class="table table-striped table-hover table-condensed do-not-create-environment cell table-sm small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: rgba(255, 255, 255, 255) !important; background-color: rgba(51, 51, 51, 255) !important;">Feature</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: rgba(255, 255, 255, 255) !important; background-color: rgba(51, 51, 51, 255) !important;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; color: rgba(255, 255, 255, 255) !important; background-color: rgba(68, 68, 68, 255) !important; font-weight: bold;">Title</td>
+<td style="text-align: left; color: rgba(255, 255, 255, 255) !important; background-color: rgba(68, 68, 68, 255) !important;">The name of each painting.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; color: rgba(255, 255, 255, 255) !important; background-color: rgba(68, 68, 68, 255) !important; font-weight: bold;">Season and Episode</td>
+<td style="text-align: left; color: rgba(255, 255, 255, 255) !important; background-color: rgba(68, 68, 68, 255) !important;">The season and episode number in which the painting was featured.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; color: rgba(255, 255, 255, 255) !important; background-color: rgba(68, 68, 68, 255) !important; font-weight: bold;">Image Source</td>
+<td style="text-align: left; color: rgba(255, 255, 255, 255) !important; background-color: rgba(68, 68, 68, 255) !important;">Links to the images of the paintings.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; color: rgba(255, 255, 255, 255) !important; background-color: rgba(68, 68, 68, 255) !important; font-weight: bold;">Color Information</td>
+<td style="text-align: left; color: rgba(255, 255, 255, 255) !important; background-color: rgba(68, 68, 68, 255) !important;">Binary indicators for the presence (True/False) of 22 specific colors across the paintings, including Titanium White, Alizarin Crimson, Van Dyke Brown, etc.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; color: rgba(255, 255, 255, 255) !important; background-color: rgba(68, 68, 68, 255) !important; font-weight: bold;">Usage Frequency</td>
+<td style="text-align: left; color: rgba(255, 255, 255, 255) !important; background-color: rgba(68, 68, 68, 255) !important;">Reflects the color palettes Bob Ross employed, offering insights into his artistic choices and recurring themes.</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-fig1" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-fig1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+<div aria-describedby="fig-fig1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="whateveryouwant_files/figure-html/fig-fig1-1.png" id="fig-fig1" class="img-fluid figure-img" width="672">
+</div>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="key-findings" class="level1">
-<h1>Key Findings</h1>
-<ol type="1">
-<li><p><strong>Most Frequently Used Colors</strong>:<br>
-Ross regularly utilized a specific set of colors that brought consistency and harmony to his paintings. These colors contributed to the tranquil and attractive landscapes that are a hallmark of his work.</p></li>
-<li><p><strong>Least Frequently Used Colors</strong>:<br>
-The analysis also revealed a set of colors that were seldom used. These colors may have been reserved for particular types of scenes or unique visual effects.</p></li>
-</ol>
+<ul>
+<li>The <a href="#fig-fig1" class="quarto-xref">Figure&nbsp;1</a> visually represents the five most frequently used colors in Bob Ross’s paintings. The bar chart <a href="#fig-fig1" class="quarto-xref">Figure&nbsp;1</a> displays the usage count of each color, highlighting <strong>Titanium White</strong> as the most dominant color, followed by <strong>Alizarin Crimson</strong>, <strong>Van Dyke Brown</strong>, <strong>Cadmium Yellow</strong>, and <strong>Yellow Ochre</strong>. These colors are crucial elements in Ross’s palette, often forming the foundation of his natural landscapes, such as skies, mountains, and foliage.</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example pie chart of color distribution</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>color_data_pie <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">color =</span> <span class="fu">c</span>(<span class="st">"Frequent Colors"</span>, <span class="st">"Rare Colors"</span>),</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">proportion =</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">15</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(color_data_pie, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">""</span>, <span class="at">y=</span>proportion, <span class="at">fill=</span>color)) <span class="sc">+</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">width=</span><span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="st">"y"</span>) <span class="sc">+</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Proportion of Frequent vs. Rare Colors in Bob Ross's Paintings"</span>) <span class="sc">+</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<div id="fig-fig2" class="quarto-figure quarto-figure-center quarto-float anchored" width="672">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-fig2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+<div aria-describedby="fig-fig2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="whateveryouwant_files/figure-html/fig-fig2-1.png" id="fig-fig2" class="img-fluid figure-img" width="672">
+</div>
 </figure>
 </div>
 </div>
 </div>
+<ul>
+<li>The heatmap <a href="#fig-fig2" class="quarto-xref">Figure&nbsp;2</a> highlights common color pairings in Bob Ross’s paintings, with darker shades representing higher co-occurrence. It reveals his consistent use of base colors like Titanium White and frequent pairings of natural tones, reflecting his signature landscape style.</li>
+</ul>
 </section>
-<section id="conclusion" class="level1">
-<h1>Conclusion</h1>
-<p>The analysis of Bob Ross’s color palette provides a window into the artistic decisions that made his work so distinctive. By regularly applying a limited yet effective set of colors, Ross was able to create the calming and picturesque landscapes that are beloved by fans. <img src="thumbnail.jpg" class="img-fluid"></p>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The research of color usage in Bob Ross’s paintings reveals a strong preference for specific colors, the most commonly used being Titanium White and Alizarin Crimson. These findings are congruent with Ross’s technique, which seeks to produce vivid but relaxing nature images. The least used hues, while less noticeable, helped to create unique features in individual artworks. This analysis of color utilization sheds light on the artistic decisions that shaped Bob Ross’ renowned landscapes.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References:</h2>
+<ul>
+<li><p>Rothschild, C. (n.d.). <em>Bob Ross art gallery</em>. Retrieved from <a href="https://connorrothschild.github.io/bob-ross-art-gallery/" class="uri">https://connorrothschild.github.io/bob-ross-art-gallery/</a></p></li>
+<li><p>Wheelhouse, G. (2021, July 28). <em>Lessons in composition from Bob Ross</em>. George Wheelhouse Wildlife Photography. Retrieved from <a href="https://www.georgewheelhouse.com/post/lessons-composition-bob-ross" class="uri">https://www.georgewheelhouse.com/post/lessons-composition-bob-ross</a></p></li>
+<li><p>Koerth, M. (2016, January 8). <em>A statistical analysis of the work of Bob Ross</em>. FiveThirtyEight. Retrieved from <a href="https://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/" class="uri">https://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/</a></p></li>
+<li><p>Bob Ross. (2015, November 2). <em>Bob Ross: The joy of painting - Wintertime blues (Season 20 Episode 10)</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=sD993H5FBIY" class="uri">https://www.youtube.com/watch?v=sD993H5FBIY</a></p></li>
+<li><p>Wikipedia contributors. (2024, August 26). <em>Bob Ross</em>. In Wikipedia, The Free Encyclopedia. Retrieved from <a href="https://en.wikipedia.org/wiki/Bob_Ross" class="uri">https://en.wikipedia.org/wiki/Bob_Ross</a></p></li>
+</ul>
 
 
 </section>

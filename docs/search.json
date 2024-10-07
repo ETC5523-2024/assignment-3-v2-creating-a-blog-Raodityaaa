@@ -1,17 +1,52 @@
 [
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
+    "objectID": "posts/welcome/whateveryouwant.html",
+    "href": "posts/welcome/whateveryouwant.html",
     "title": "Bob Ross’s Joy of Painting Analysis",
     "section": "",
-    "text": "Introduction\nBob Ross, the iconic host of The Joy of Painting, captivated audiences with his ability to create serene landscapes in under 30 minutes. One defining element of his art is the limited yet effective color palette he used. This post explores the colors most and least frequently used in his paintings, uncovering the artistic preferences that contributed to his distinctive style.\n\n\nData and Methodology\nUsing a dataset containing binary indicators for colors present in Bob Ross’s paintings, we examined the frequency of colors across multiple episodes. The dataset provides insights into the aesthetic choices Ross made, highlighting which colors were staples in his artistic repertoire.\n\n# Load libraries and data (assuming the data was loaded previously)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(ggplot2)\n\n# Example data plotting (adjust with actual dataset)\ncolor_data &lt;- data.frame(\n  color = c(\"Green\", \"Blue\", \"Brown\", \"White\", \"Black\", \"Yellow\"),\n  frequency = c(30, 25, 20, 15, 10, 5)\n)\n\nggplot(color_data, aes(x=reorder(color, -frequency), y=frequency, fill=color)) +\n  geom_bar(stat=\"identity\") +\n  labs(title=\"Frequency of Colors Used in Bob Ross's Paintings\", x=\"Color\", y=\"Frequency\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\nKey Findings\n\nMost Frequently Used Colors:\nRoss regularly utilized a specific set of colors that brought consistency and harmony to his paintings. These colors contributed to the tranquil and attractive landscapes that are a hallmark of his work.\nLeast Frequently Used Colors:\nThe analysis also revealed a set of colors that were seldom used. These colors may have been reserved for particular types of scenes or unique visual effects.\n\n\n# Example pie chart of color distribution\ncolor_data_pie &lt;- data.frame(\n  color = c(\"Frequent Colors\", \"Rare Colors\"),\n  proportion = c(85, 15)\n)\n\nggplot(color_data_pie, aes(x=\"\", y=proportion, fill=color)) +\n  geom_bar(stat=\"identity\", width=1) +\n  coord_polar(\"y\") +\n  labs(title=\"Proportion of Frequent vs. Rare Colors in Bob Ross's Paintings\") +\n  theme_void()\n\n\n\n\n\n\n\n\n\n\nConclusion\nThe analysis of Bob Ross’s color palette provides a window into the artistic decisions that made his work so distinctive. By regularly applying a limited yet effective set of colors, Ross was able to create the calming and picturesque landscapes that are beloved by fans."
+    "text": "Bob Ross, the iconic host of The Joy of Painting, is renowned for his ability to paint tranquil and attractive landscapes in under 30 minutes. This paper examines the colors used in his paintings to determine color usage trends, with a special emphasis on the most and least often used colors. By evaluating these elements, we obtain insight into Ross’ artistic tastes and the color palettes that constitute his distinct style.\nThe goal of this analysis is to investigate the color palette used by Bob Ross in his television series The Joy of Painting. By examining the frequency and combination of colors used, we aim to uncover insights into his artistic style, which helped define the serene and picturesque landscapes he painted."
+  },
+  {
+    "objectID": "posts/welcome/whateveryouwant.html#problem-description",
+    "href": "posts/welcome/whateveryouwant.html#problem-description",
+    "title": "Bob Ross’s Joy of Painting Analysis",
+    "section": "",
+    "text": "Bob Ross, the iconic host of The Joy of Painting, is renowned for his ability to paint tranquil and attractive landscapes in under 30 minutes. This paper examines the colors used in his paintings to determine color usage trends, with a special emphasis on the most and least often used colors. By evaluating these elements, we obtain insight into Ross’ artistic tastes and the color palettes that constitute his distinct style.\nThe goal of this analysis is to investigate the color palette used by Bob Ross in his television series The Joy of Painting. By examining the frequency and combination of colors used, we aim to uncover insights into his artistic style, which helped define the serene and picturesque landscapes he painted."
+  },
+  {
+    "objectID": "posts/welcome/whateveryouwant.html#dataset-overview",
+    "href": "posts/welcome/whateveryouwant.html#dataset-overview",
+    "title": "Bob Ross’s Joy of Painting Analysis",
+    "section": "Dataset Overview",
+    "text": "Dataset Overview\n\n\n\n\nTable 1: Key Features of the Dataset\n\n\n\n\n\n\n\nFeature\nDescription\n\n\n\n\nTitle\nThe name of each painting.\n\n\nSeason and Episode\nThe season and episode number in which the painting was featured.\n\n\nImage Source\nLinks to the images of the paintings.\n\n\nColor Information\nBinary indicators for the presence (True/False) of 22 specific colors across the paintings, including Titanium White, Alizarin Crimson, Van Dyke Brown, etc.\n\n\nUsage Frequency\nReflects the color palettes Bob Ross employed, offering insights into his artistic choices and recurring themes."
+  },
+  {
+    "objectID": "posts/welcome/whateveryouwant.html#analysis",
+    "href": "posts/welcome/whateveryouwant.html#analysis",
+    "title": "Bob Ross’s Joy of Painting Analysis",
+    "section": "Analysis",
+    "text": "Analysis\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\n\n\nThe Figure 1 visually represents the five most frequently used colors in Bob Ross’s paintings. The bar chart Figure 1 displays the usage count of each color, highlighting Titanium White as the most dominant color, followed by Alizarin Crimson, Van Dyke Brown, Cadmium Yellow, and Yellow Ochre. These colors are crucial elements in Ross’s palette, often forming the foundation of his natural landscapes, such as skies, mountains, and foliage.\n\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\n\n\n\nThe heatmap Figure 2 highlights common color pairings in Bob Ross’s paintings, with darker shades representing higher co-occurrence. It reveals his consistent use of base colors like Titanium White and frequent pairings of natural tones, reflecting his signature landscape style."
+  },
+  {
+    "objectID": "posts/welcome/whateveryouwant.html#conclusion",
+    "href": "posts/welcome/whateveryouwant.html#conclusion",
+    "title": "Bob Ross’s Joy of Painting Analysis",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe research of color usage in Bob Ross’s paintings reveals a strong preference for specific colors, the most commonly used being Titanium White and Alizarin Crimson. These findings are congruent with Ross’s technique, which seeks to produce vivid but relaxing nature images. The least used hues, while less noticeable, helped to create unique features in individual artworks. This analysis of color utilization sheds light on the artistic decisions that shaped Bob Ross’ renowned landscapes."
+  },
+  {
+    "objectID": "posts/welcome/whateveryouwant.html#references",
+    "href": "posts/welcome/whateveryouwant.html#references",
+    "title": "Bob Ross’s Joy of Painting Analysis",
+    "section": "References:",
+    "text": "References:\n\nRothschild, C. (n.d.). Bob Ross art gallery. Retrieved from https://connorrothschild.github.io/bob-ross-art-gallery/\nWheelhouse, G. (2021, July 28). Lessons in composition from Bob Ross. George Wheelhouse Wildlife Photography. Retrieved from https://www.georgewheelhouse.com/post/lessons-composition-bob-ross\nKoerth, M. (2016, January 8). A statistical analysis of the work of Bob Ross. FiveThirtyEight. Retrieved from https://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/\nBob Ross. (2015, November 2). Bob Ross: The joy of painting - Wintertime blues (Season 20 Episode 10) [Video]. YouTube. https://www.youtube.com/watch?v=sD993H5FBIY\nWikipedia contributors. (2024, August 26). Bob Ross. In Wikipedia, The Free Encyclopedia. Retrieved from https://en.wikipedia.org/wiki/Bob_Ross"
   },
   {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "ETC5523 Blog Assessment",
     "section": "",
-    "text": "Bob Ross’s Joy of Painting Analysis\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nAditya Rao\n\n\n\n\n\n\nNo matching items"
+    "text": "Bob Ross’s Joy of Painting Analysis\n\n\n\n\n\n\nblog\n\n\n\nThis analysis examines color usage in Bob Ross’s The Joy of Painting, highlighting his aesthetic choices and frequent use of a limited, serene color palette. \n\n\n\n\n\nDec 10, 2007\n\n\nAditya Rao\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -25,6 +60,6 @@
     "href": "index.html",
     "title": "ETC5523 Blog Assessment",
     "section": "",
-    "text": "Bob Ross’s Joy of Painting Analysis\n\n\n\n\n\n\nblog\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\nAditya Rao\n\n\n\n\n\n\nNo matching items"
+    "text": "Bob Ross’s Joy of Painting Analysis\n\n\n\n\n\n\nblog\n\n\n\nThis analysis examines color usage in Bob Ross’s The Joy of Painting, highlighting his aesthetic choices and frequent use of a limited, serene color palette. \n\n\n\n\n\nDec 10, 2007\n\n\nAditya Rao\n\n\n\n\n\n\nNo matching items"
   }
 ]

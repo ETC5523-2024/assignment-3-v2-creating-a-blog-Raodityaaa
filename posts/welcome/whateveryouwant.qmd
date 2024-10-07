@@ -3,7 +3,7 @@ title: "Bob Ross's Joy of Painting Analysis"
 description: |
   This analysis examines color usage in Bob Ross's The Joy of Painting, highlighting his aesthetic choices and frequent use of a limited, serene color palette.
 author: "Aditya Rao"
-date: "sys.date"
+date: "24-10-06"
 categories: [blog]
 format:
   html:
@@ -25,6 +25,7 @@ knitr::opts_chunk$set(echo = FALSE,
 ```
 
 ```{r loading-libraries}
+
 library(tidyverse)
 library(tidytuesdayR)
 library(dplyr)
@@ -80,6 +81,7 @@ The goal of this analysis is to investigate the color palette used by Bob Ross i
 ## Dataset Overview
 
 ```{r}
+#| label: tbl-chart1
 data_description <- data.frame(
   Feature = c("Title", 
               "Season and Episode", 
@@ -103,8 +105,9 @@ kable(data_description, caption = "Key Features of the Dataset") %>%
   column_spec(1, bold = TRUE)  # Bold the first column
 ```
 
-
+## Analysis
 ```{r plot 1}
+#| label: fig-fig1
 #| echo: false
 # Separate the most and least used colors
 most_used_colors <- color_usage_long %>% arrange(desc(Count)) %>% head(5)
@@ -120,10 +123,50 @@ plot1 <- ggplot(most_used_colors, aes(x = reorder(Color, Count), y = Count)) +
 plot1 + dark_theme_bw()
 ```
 
+-   The @fig-fig1 visually represents the five most frequently used colors in Bob Ross's paintings. The bar chart @fig-fig1 displays the usage count of each color, highlighting **Titanium White** as the most dominant color, followed by **Alizarin Crimson**, **Van Dyke Brown**, **Cadmium Yellow**, and **Yellow Ochre**. These colors are crucial elements in Ross’s palette, often forming the foundation of his natural landscapes, such as skies, mountains, and foliage.
 
+```{r}
+#| echo: false
+#| label: fig-fig2
+color_columns <- colnames(bob_ross)[grepl("Black_Gesso|Bright_Red|Burnt_Umber|Cadmium_Yellow|Dark_Sienna|Indian_Red|Indian_Yellow|Liquid_Black|Liquid_Clear|Midnight_Black|Phthalo_Blue|Phthalo_Green|Prussian_Blue|Sap_Green|Titanium_White|Van_Dyke_Brown|Yellow_Ochre|Alizarin_Crimson", colnames(bob_ross))]
 
+# Subset the color columns and create a color co-occurrence matrix
+color_matrix <- bob_ross[, color_columns]
+color_cooccurrence <- as.matrix(t(color_matrix)) %*% as.matrix(color_matrix)
 
+# Convert to a long format for plotting
+melted_cooccurrence <- melt(color_cooccurrence)
 
+# Plot the heatmap using ggplot2
+plot3 <- ggplot(melted_cooccurrence, aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient(low = "white", high = "blue") +
+  labs(title = "Color Co-occurrence in Bob Ross Paintings", x = "Colors", y = "Colors") +
+  theme(axis.text.x = element_text(angle = 30, vjust = 0.5, hjust = 1, size = 12),
+        axis.text.y = element_text(size = 12),
+        plot.title = element_text(size = 16),
+        axis.title = element_text(size = 14),
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 10))
+plot3 + dark_theme_grey()
+```
+
+- The heatmap @fig-fig2 highlights common color pairings in Bob Ross's paintings, with darker shades representing higher co-occurrence. It reveals his consistent use of base colors like Titanium White and frequent pairings of natural tones, reflecting his signature landscape style.
+
+## Conclusion
+The research of color usage in Bob Ross's paintings reveals a strong preference for specific colors, the most commonly used being Titanium White and Alizarin Crimson. These findings are congruent with Ross's technique, which seeks to produce vivid but relaxing nature images. The least used hues, while less noticeable, helped to create unique features in individual artworks. This analysis of color utilization sheds light on the artistic decisions that shaped Bob Ross' renowned landscapes.
+
+## References:
+
+-   Rothschild, C. (n.d.). *Bob Ross art gallery*. Retrieved from <https://connorrothschild.github.io/bob-ross-art-gallery/>
+
+-   Wheelhouse, G. (2021, July 28). *Lessons in composition from Bob Ross*. George Wheelhouse Wildlife Photography. Retrieved from <https://www.georgewheelhouse.com/post/lessons-composition-bob-ross>
+
+-   Koerth, M. (2016, January 8). *A statistical analysis of the work of Bob Ross*. FiveThirtyEight. Retrieved from <https://fivethirtyeight.com/features/a-statistical-analysis-of-the-work-of-bob-ross/>
+
+-   Bob Ross. (2015, November 2). *Bob Ross: The joy of painting - Wintertime blues (Season 20 Episode 10)* \[Video\]. YouTube. <https://www.youtube.com/watch?v=sD993H5FBIY>
+
+-   Wikipedia contributors. (2024, August 26). *Bob Ross*. In Wikipedia, The Free Encyclopedia. Retrieved from <https://en.wikipedia.org/wiki/Bob_Ross>
 
 
 
